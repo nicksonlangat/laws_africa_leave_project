@@ -20,10 +20,16 @@ class Leave(models.Model):
         ('Normal leave', 'Normal leave'),
         ('Sick leave', 'Sick leave'),
     )
+    LEAVE_STATUS_CHOICES = (
+        ('Pending', 'Pending'),
+        ('Approved', 'Approved'),
+        ('Rejected', 'Rejected'),
+    )
     staff = models.ForeignKey(Staff, on_delete=models.CASCADE, related_name='company_staff')
     start_date = models.DateField()
     end_date = models.DateField()
     leave_type = models.CharField(max_length=250, choices = LEAVE_TYPE_CHOICES)
+    leave_status = models.CharField(max_length=250, choices = LEAVE_STATUS_CHOICES, default='Pending')
     number_of_leave_days = models.IntegerField(blank=True, null=True)
 
     def save(self, *args, **kwargs):

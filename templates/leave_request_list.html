@@ -8,6 +8,7 @@
     <th>From</th>
     <th>To</th>
     <th>Type</th>
+    <th>Status</th>
     <th>Days</th>
     {% for leave in leave_requests %}
     <tr>
@@ -15,6 +16,7 @@
         <td>{{leave.start_date}}</td>
         <td>{{leave.end_date}}</td>
         <td>{{leave.leave_type}}</td>
+        <td>{{leave.leave_status}}</td>
         <td>{{leave.number_of_leave_days}}</td>
         <td><a href="{% url 'update_leave' leave.pk%}">Edit leave</a></td>
     </tr>
