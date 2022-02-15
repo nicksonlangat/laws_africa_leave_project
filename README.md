@@ -22,10 +22,13 @@ These instructions will get you a copy of the project up and running in your loc
 ## Starting the server
 - Ensure you are in the project directory on the same level with `manage.py` and the virtual environment is activated
 - Run the server `python manage.py runserver`
+- Create a superuser by  `python manage.py createsuperuser`. Login to the admin portal and create a few staff users for testing.
+- Go to `http://localhost:8000` to interact with the app.
 
 ## PROJECT MODULES
 - The project configs and settings is in the folder `mysite`
 - Main app is `core`.
+
 
 ## CONTAINERISATION
 - Used Docker 
