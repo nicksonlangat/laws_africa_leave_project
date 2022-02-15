@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{% url 'new_leave' %}">
+    NEW LEAVE REQUEST
+</a>
+<table>
+    <th>Staff</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Type</th>
+    <th>Days</th>
+    {% for leave in leave_requests %}
+    <tr>
+        <td>{{leave.staff}}</td>
+        <td>{{leave.start_date}}</td>
+        <td>{{leave.end_date}}</td>
+        <td>{{leave.leave_type}}</td>
+        <td>{{leave.number_of_leave_days}}</td>
+        <td><a href="{% url 'update_leave' leave.pk%}">Edit leave</a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
